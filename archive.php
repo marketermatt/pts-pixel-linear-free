@@ -45,9 +45,10 @@
                          <p><bd><time class="post-date"><?php the_date(); ?></time></bd></p>                
                   </section><!-- end of .post-meta -->
 
-                  <header>
-                    <h4 class="post-title"><?php the_title(); ?></h4>
+                   <a href="<?php the_permalink(); ?>" <header>
+                   <h4 class="post-title"><?php the_title(); ?></h4>
                   </header>
+				    </a>
                   <section class="post-entry">
                     <?php if ( has_post_thumbnail()) : ?>
                     <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" >

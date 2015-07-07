@@ -415,8 +415,25 @@ jQuery(document).ready(function($){
 	
 	/** AJAX Save Options */
 	$('#of_save').live('click',function() {
-			
 		var nonce = $('#security').val();
+		$( ".img_error" ).removeClass( "disp_none" ).addClass( "img_error" );
+		var className = $('.cb-enable, .selected').attr('class');
+			
+		var count_image=0;
+        $(".slide_body .upload").each(function(){
+        count_image = count_image+($.trim($(this).val())=="" ? 1 : 0);
+        });
+		
+		if(count_image>0 && className == 'cb-enable selected') {
+        $('.img_error').html("One or more slides are missing image(s)");
+		return false;
+		}
+		else{
+			$( ".img_error" ).addClass( "disp_none" );
+		}
+		
+		var nonce = $('#security').val();
+		
 					
 		$('.ajax-loading-img').fadeIn();
 		

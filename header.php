@@ -105,7 +105,7 @@ body{
 	  		   if(!empty($top_nav['top-bar'])){
 				  $args = array(
 					  'theme_location' => 'top-bar',
-					  'depth'      => 2,
+					  'depth'      => 3,
 					  'container'  => false,
 					  'menu_class'     => 'nav navbar-nav navbar-right',
 					  'walker'     => new Bootstrap_Walker_Nav_Menu()
@@ -133,7 +133,7 @@ body{
         	
                 $args_snav = array(
                     'theme_location' => 'secondary-nav-bar',
-                    'depth'      => 2,
+                    'depth'      => 3,
                     'container'  => false,
                     'menu_class'     => 'nav navbar-nav navbar-left',
                     'walker'     => new Bootstrap_Walker_Nav_Menu()
@@ -168,17 +168,31 @@ body{
     <!-- slider -->
     <section id="pixi-slider" class="carousel slide">
             <!-- Indicators -->
+				<?php if(sizeof($pixslider)>1){ ?>
             <ol class="carousel-indicators">
                 <?php for($sCnt=0; $sCnt < sizeof($pixslider);  $sCnt++){ ?>
                 	<li data-target="#pixi-slider" data-slide-to="<?php echo $sCnt; ?>" <?php if($sCnt==0){?> class="active" <?php } ?> ></li>
                 <?php }?>
             </ol>
-    
+    <?php  } ?>
             <!-- Wrapper for Slides -->
-            <div class="carousel-inner">
+			
+             <div class="carousel-inner">
                 <?php $iCnt=0; foreach( $pixslider as $slide ) { 
 				 if($iCnt=='0'){ $addAct = "active"; }else{$addAct = "";}
+				 if($slide['link']!=""){
                     echo (
+                        "  <div class='item ". $addAct ."'>
+                        	<a href='". $slide['link'] ."' target='_blank'><div class='fill' style='background-image:url(". $slide['url'] .");'></div>
+                        	<div class='carousel-caption'>
+								<h1>".$slide['title']."</h1>
+                            	<p>".$slide['description']."</p>
+                        	</div>
+							</a>
+                    	</div> "
+                    );
+					}else{
+					 echo (
                         "<div class='item ". $addAct ."'>
                         	<div class='fill' style='background-image:url(". $slide['url'] .");'></div>
                         	<div class='carousel-caption'>
@@ -186,16 +200,33 @@ body{
                         	</div>
                     	</div>"
                     );
+					
+					}
                 $iCnt++; }?>
             </div>
+			
     
             <!-- Controls -->
+			<script language="">
+			/*
+			//jQuery( document ).ready(function($) {
+            //alert( "ready!" );
+			//$( ".icon-prev" ).trigger( "click" );
+			jQuery(window).on('load', function ($) {
+			setTimeout(function() {
+              $('.icon-next').trigger('click');
+               }, 500);
+             });
+			*/
+			</script>
+			<?php if(sizeof($pixslider)>1){ ?>
             <a class="left carousel-control" href="#pixi-slider" data-slide="prev">
                 <span class="icon-prev"></span>
             </a>
             <a class="right carousel-control" href="#pixi-slider" data-slide="next">
                 <span class="icon-next"></span>
             </a>
+			<?php } ?>
     </section>
     <!-- slider ends -->
     <?php } ?>

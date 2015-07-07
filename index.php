@@ -92,7 +92,7 @@ $sitename=$array[1];
                       <?php the_content(); ?>
                   </div>
                   <footer class="col-sm-12 post-footer">
-                    <bd>Tags :</bd> <?php echo the_tags("", " | ", " ."); ?>
+                    <bd>Tags :</bd> <?php echo the_tags("", " | ", " "); ?>
                   </footer>
                   <div class="clearfix"></div>
                   

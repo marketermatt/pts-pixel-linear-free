@@ -127,7 +127,7 @@
         	<?php if( pts_get_data('custom_copy_info') !== '' ) { ?>
             	<p><a href="http://pixelthemestudio.ca/"><?php echo strip_tags(pts_get_data('custom_copy_info')); ?></a></p>
             <?php } else { ?>
-                <p><a href="http://pixelthemestudio.ca/">Copyright &copy; 2014 Pixel Theme Studio. All rights reserved.</a></p>
+                <p><a href="http://pixelthemestudio.ca/">Copyright &copy; 2015 Pixel Theme Studio. All rights reserved.</a></p>
             <?php  } ?>
 		</div>
     </div>

@@ -413,7 +413,7 @@ class Options_Machine {
 					}			
 					$output .= '</ul>';
 					$output .= '<a href="#" class="button slide_add_button">Add New Slide</a></div>';
-					
+					$output .= '<div class="img_error"></div>';
 				break;
 				
 				//drag & drop block manager
@@ -808,7 +808,7 @@ class Options_Machine {
 		
 		$slider .= '<label>Image URL</label>';
 		$slider .= '<input class="upload slide of-input" name="'. $id .'['.$order.'][url]" id="'. $id .'_'.$order .'_slide_url" value="'. $val['url'] .'" />';
-		
+						
 		$slider .= '<div class="upload_button_div"><span class="button media_upload_button" id="'.$id.'_'.$order .'">Upload</span>';
 		
 		if(!empty($val['url'])) {$hide = '';} else { $hide = 'hide';}

@@ -1450,7 +1450,7 @@ if (!function_exists('of_options'))
 			"type" 	=> "info");
         
 		$of_options[] = array( "name"	=> __( 'Favicon', 'pixlin' ),
-			"desc"	=> __( 'Upload or past the URL for your custom favicon.', 'pixlin' ),
+			"desc"	=> __( 'Upload or Paste the URL for your custom favicon.', 'pixlin' ),
 			"id"	=> "custom_favicon",
 			"std"	=> "",
 			"type"	=> "media");
@@ -1496,14 +1496,14 @@ if (!function_exists('of_options'))
 			);
 			
 		$of_options[] = array( "name"	=> __( 'Slider Options', 'pixlin' ),
-			"desc"	=> __( 'Unlimited slider with drag and drop sortings.', 'pixlin' ),
+			"desc"	=> __( 'Unlimited slider with drag and drop sortings.<br>(recommended size of image 1200px x 400px)', 'pixlin' ),
 			"id"	=> "custom_slider",
 			"std" 		=> "",
 			"type"	=> "slider",
 			);
 			
 		
-		$of_options[] = array( "name"	=> __( 'Enable 3 Box On Homepage', 'pixlin' ),
+		$of_options[] = array( "name"	=> __( 'Enable 3 boxes on homepage', 'pixlin' ),
 			"desc"	=> __( 'Use widgets to add content in 3 boxex', 'pixlin' ),
 			"id"	=> "enable_disable_3box",
 			"std" 		=> 0,
