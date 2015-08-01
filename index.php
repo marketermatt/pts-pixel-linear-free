@@ -14,13 +14,7 @@
  */
 ?>
 <?php get_header(); ?>
-
-   <?php global $more; $more = 0; ?>
-<?php
-$url=$_SERVER['REQUEST_URI'];
-$array = explode("/",$url);
-$sitename=$array[1];
-?>
+<?php global $more; $more = 0; ?>
 
    <?php
    global $wp_query;
@@ -73,7 +67,7 @@ $sitename=$array[1];
                    <header>
                      <h3 class="post-title"><?php the_title(); ?></h3>
                    </header>        
-                   <p><a href="<?php $sitename;?>/author/<?php the_author_meta( 'display_name' ); ?>"><i class="fa fa-user"></i> <?php the_author_meta( 'display_name' ); ?> / <i class="fa fa-calendar"></i> <time class="post-date"><?php the_date(); ?></time></p></a>	
+                   <p><a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>"><i class="fa fa-user"></i> <?php the_author_meta( 'display_name' ); ?> / <i class="fa fa-calendar"></i> <time class="post-date"><?php the_date(); ?></time></p></a>	
                   </section><!-- end of .post-meta -->
 
 				  
