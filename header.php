@@ -164,7 +164,7 @@ body{
 	$enable_disable_slider = get_post_meta( $post->ID, '_cmb_enable_disable_slider', true );
 	?>
     
-    <?php if( pts_get_data('enable_disable_slider') == '1' || $enable_disable_slider == 'on'  ) { $pixslider = pts_get_data('custom_slider'); ?>
+        <?php if( (is_front_page() && bi_get_data('enable_disable_slider') == '1') || (is_page() && $enable_disable_slider == 'on' && bi_get_data('enable_disable_slider') == '1') ) { $pixslider = bi_get_data('custom_slider'); ?>
     <!-- slider -->
     <section id="pixi-slider" class="carousel slide">
             <!-- Indicators -->
