@@ -3,7 +3,7 @@
  * Template for comments and pingbacks.
  *
  * To override this walker in a child theme without modifying the comments
- * template simply create your own pixlin_comment(), and that function
+ * template simply create your own gents_comment(), and that function
  * will be used instead.
  *
  * Used as a callback by wp_list_comments() for displaying the comments.
@@ -15,8 +15,8 @@
  * @return void
  */
 
-if ( ! function_exists( 'pixlin_comment' ) ) :
-function pixlin_comment( $comment, $args, $depth ) {
+if ( ! function_exists( 'gents_comment' ) ) :
+function gents_comment( $comment, $args, $depth ) {
 	$GLOBALS['comment'] = $comment;
 	switch ( $comment->comment_type ) :
 		case 'pingback' :

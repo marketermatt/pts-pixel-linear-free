@@ -36,7 +36,7 @@ add_action( 'wp_enqueue_scripts', 'bootstrap_styles' );
 
 
   function load_fonts() {
-            wp_register_style('googleFonts', '//fonts.googleapis.com/css?family=Open+Sans:400,700,300,600');
+            wp_register_style('googleFonts', 'http://fonts.googleapis.com/css?family=Open+Sans:400,700,300,600');
             wp_enqueue_style( 'googleFonts');
         }
  

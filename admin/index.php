@@ -84,8 +84,8 @@ add_action('admin_menu', 'optionsframework_add_admin');
  *
  * @since 1.0.0
  */ 
-require_once ( ADMIN_PATH . 'functions/functions.load.php' );
-require_once ( ADMIN_PATH . 'classes/class.options_machine.php' );
+include_once( ADMIN_PATH . 'functions/functions.load.php' );
+include_once( ADMIN_PATH . 'classes/class.options_machine.php' );
 
 /**
  * AJAX Saving Options

@@ -4,7 +4,7 @@
  * Theme's Functions and Definitions
  * @file           functions.php
  * @package        Pixel-Linear 
- * @author         Pixel Theme Studio 
+ * @author        Pixel Theme Studio 
  * @copyright      2014 - 2015 Pixel Theme Studio Themes
  * @license        license.txt
  * @version        Release: 1.0.0
@@ -12,15 +12,15 @@
  * @since          available since Release 1.0
  */
 
-add_action('after_setup_theme', 'pixlin_setup');
+add_action('after_setup_theme', 'gents_setup');
 
 
 
-if (!function_exists('pixlin_setup')):
+if (!function_exists('gents_setup')):
 
 
 
-    function pixlin_setup() {
+    function gents_setup() {
 
 
 
@@ -50,7 +50,7 @@ if (!function_exists('pixlin_setup')):
 
          */
 
-	    load_theme_textdomain('pixlin', get_template_directory().'/languages');
+	    load_theme_textdomain('gents', get_template_directory().'/languages');
 
 
 
@@ -104,7 +104,7 @@ if (!function_exists('pixlin_setup')):
 
 
 
-        $options = get_option('pixlin_theme_options');    
+        $options = get_option('gents_theme_options');    
 
     }
 
@@ -120,7 +120,7 @@ endif;
 
  */
 
-function pixlin_page_menu_args( $args ) {
+function gents_page_menu_args( $args ) {
 
 	$args['show_home'] = true;
 
@@ -128,7 +128,7 @@ function pixlin_page_menu_args( $args ) {
 
 }
 
-add_filter( 'wp_page_menu_args', 'pixlin_page_menu_args' );
+add_filter( 'wp_page_menu_args', 'gents_page_menu_args' );
 
 
 
@@ -138,7 +138,7 @@ add_filter( 'wp_page_menu_args', 'pixlin_page_menu_args' );
 
  */
 
-function pixlin_wp_page_menu ($page_markup) {
+function gents_wp_page_menu ($page_markup) {
 
     preg_match('/^<div class=\"([a-z0-9-_]+)\">/i', $page_markup, $matches);
 
@@ -154,7 +154,7 @@ function pixlin_wp_page_menu ($page_markup) {
 
 
 
-add_filter('wp_page_menu', 'pixlin_wp_page_menu');
+add_filter('wp_page_menu', 'gents_wp_page_menu');
 
 
 
@@ -176,7 +176,7 @@ add_filter('wp_page_menu', 'pixlin_wp_page_menu');
 
  */
 
-function pixlin_comment_count( $count ) {  
+function gents_comment_count( $count ) {  
 
 	if ( ! is_admin() ) {
 
@@ -194,7 +194,7 @@ function pixlin_comment_count( $count ) {
 
 }
 
-add_filter('get_comments_number', 'pixlin_comment_count', 0);
+add_filter('get_comments_number', 'gents_comment_count', 0);
 
 
 
@@ -210,7 +210,7 @@ add_filter('get_comments_number', 'pixlin_comment_count', 0);
 
  */
 
-function pixlin_comment_list_pings( $comment ) {
+function gents_comment_list_pings( $comment ) {
 
 	$GLOBALS['comment'] = $comment;
 
@@ -230,7 +230,7 @@ function pixlin_comment_list_pings( $comment ) {
 
  */
 
-function pixlin_excerpt_length($length) {
+function gents_excerpt_length($length) {
 
     return 40;
 
@@ -238,7 +238,7 @@ function pixlin_excerpt_length($length) {
 
 
 
-add_filter('excerpt_length', 'pixlin_excerpt_length');
+add_filter('excerpt_length', 'gents_excerpt_length');
 
 
 
@@ -248,9 +248,9 @@ add_filter('excerpt_length', 'pixlin_excerpt_length');
 
  */
 
-function pixlin_read_more() {
+function gents_read_more() {
 
-    return ' <a href="' . get_permalink() . '">' . __('<div class="read-more"><p>Read more &#8250;</p></div><!-- end of .read-more -->', 'pixlin') . '</a>';
+    return ' <a href="' . get_permalink() . '">' . __('<div class="read-more"><p>Read more &#8250;</p></div><!-- end of .read-more -->', 'gents') . '</a>';
 
 }
 
@@ -258,19 +258,19 @@ function pixlin_read_more() {
 
 /**
 
- * Replaces "[...]" (appended to automatically generated excerpts) with an ellipsis and pixlin_read_more_link().
+ * Replaces "[...]" (appended to automatically generated excerpts) with an ellipsis and gents_read_more_link().
 
  */
 
-function pixlin_auto_excerpt_more($more) {
+function gents_auto_excerpt_more($more) {
 
-    return pixlin_read_more();
+    return gents_read_more();
 
 }
 
 
 
-add_filter('excerpt_more', 'pixlin_auto_excerpt_more');
+add_filter('excerpt_more', 'gents_auto_excerpt_more');
 
 
 
@@ -280,11 +280,11 @@ add_filter('excerpt_more', 'pixlin_auto_excerpt_more');
 
  */
 
-function pixlin_custom_excerpt_more($output) {
+function gents_custom_excerpt_more($output) {
 
     if (has_excerpt() && !is_attachment()) {
 
-        $output .= pixlin_read_more();
+        $output .= gents_read_more();
 
     }
 
@@ -294,7 +294,7 @@ function pixlin_custom_excerpt_more($output) {
 
 
 
-add_filter('get_the_excerpt', 'pixlin_custom_excerpt_more');
+add_filter('get_the_excerpt', 'gents_custom_excerpt_more');
 
 
 
@@ -332,7 +332,7 @@ add_filter( 'the_content_more_link', 'my_more_link', 10, 2 );
 
  */
 
-function pixlin_remove_gallery_css($css) {
+function gents_remove_gallery_css($css) {
 
     return preg_replace("#<style type='text/css'>(.*?)</style>#s", '', $css);
 
@@ -340,7 +340,7 @@ function pixlin_remove_gallery_css($css) {
 
 
 
-add_filter('gallery_style', 'pixlin_remove_gallery_css');
+add_filter('gallery_style', 'gents_remove_gallery_css');
 
 
 
@@ -352,7 +352,7 @@ add_filter('gallery_style', 'pixlin_remove_gallery_css');
 
  */
 
-function pixlin_remove_recent_comments_style() {
+function gents_remove_recent_comments_style() {
 
 	global $wp_widget_factory;
 
@@ -360,7 +360,7 @@ function pixlin_remove_recent_comments_style() {
 
 }
 
-add_action( 'widgets_init', 'pixlin_remove_recent_comments_style' );
+add_action( 'widgets_init', 'gents_remove_recent_comments_style' );
 
 
 
@@ -382,13 +382,13 @@ add_action( 'widgets_init', 'pixlin_remove_recent_comments_style' );
 
  */
 
-function pixlin_breadcrumb_lists() {
+function gents_breadcrumb_lists() {
 
 
 
     $chevron = '<span class="divider">/</span>';
 
-    $name = __('Home','pixlin'); //text for the 'Home' link
+    $name = __('Home','gents'); //text for the 'Home' link
 
     $currentBefore = '<li class="active">';
 
@@ -396,7 +396,7 @@ function pixlin_breadcrumb_lists() {
 
 
 
-    _e('<ul class="breadcrumb">','pixlin');
+    echo '<ul class="breadcrumb">';
 
 
 
@@ -506,11 +506,11 @@ function pixlin_breadcrumb_lists() {
 
     } elseif (is_search()) {
 
-        echo $currentBefore . __('Search results for &#39;','pixlin') . get_search_query() . __('&#39;','pixlin') . $currentAfter;
+        echo $currentBefore . __('Search results for &#39;','gents') . get_search_query() . __('&#39;','gents') . $currentAfter;
 
     } elseif (is_tag()) {
 
-        echo $currentBefore . __('Posts tagged &#39;','pixlin');
+        echo $currentBefore . __('Posts tagged &#39;','gents');
 
         single_tag_title();
 
@@ -522,11 +522,11 @@ function pixlin_breadcrumb_lists() {
 
         $userdata = get_userdata($author);
 
-        echo $currentBefore . __('Articles posted by ','pixlin') . $userdata->display_name . $currentAfter;
+        echo $currentBefore . __('Articles posted by ','gents') . $userdata->display_name . $currentAfter;
 
     } elseif (is_404()) {
 
-        echo $currentBefore . __('Error 404','pixlin') . $currentAfter;
+        echo $currentBefore . __('Error 404','gents') . $currentAfter;
 
     }
 
@@ -536,19 +536,19 @@ function pixlin_breadcrumb_lists() {
 
         if (is_category() || is_day() || is_month() || is_year() || is_search() || is_tag() || is_author())
 
-            _e(' (','pixlin');
+            echo ' (';
 
-        echo __('Page','pixlin') . ' ' . get_query_var('paged');
+        echo __('Page','gents') . ' ' . get_query_var('paged');
 
         if (is_category() || is_day() || is_month() || is_year() || is_search() || is_tag() || is_author())
 
-            _e(')','pixlin');
+            echo ')';
 
     }
 
 
 
-    _e('</ul>','pixlin');
+    echo '</ul>';
 
 }
 
@@ -564,15 +564,15 @@ function pixlin_breadcrumb_lists() {
 
     if (!is_admin())
 
-        add_action('wp_enqueue_scripts', 'pixlin_js');
+        add_action('wp_enqueue_scripts', 'gents_js');
 
 
 
-    if (!function_exists('pixlin_js')) {
+    if (!function_exists('gents_js')) {
 
 
 
-        function pixlin_js() {
+        function gents_js() {
 
 			// JS at the bottom for fast page loading. 
 
@@ -596,7 +596,7 @@ function pixlin_breadcrumb_lists() {
 
      */
 
-        function pixlin_enqueue_comment_reply() {
+        function gents_enqueue_comment_reply() {
 
     if ( is_singular() && comments_open() && get_option('thread_comments')) { 
 
@@ -608,7 +608,7 @@ function pixlin_breadcrumb_lists() {
 
 
 
-    add_action( 'wp_enqueue_scripts', 'pixlin_enqueue_comment_reply' );
+    add_action( 'wp_enqueue_scripts', 'gents_enqueue_comment_reply' );
 
 	
 
@@ -618,15 +618,15 @@ function pixlin_breadcrumb_lists() {
 
      */
 
-    add_filter('the_title', 'pixlin_title');
+    add_filter('the_title', 'gents_title');
 
 
 
-    function pixlin_title($title) {
+    function gents_title($title) {
 
         if ($title == '') {
 
-            return __('Untitled','pixlin');
+            return __('Untitled','gents');
 
         } else {
 
@@ -644,14 +644,14 @@ function pixlin_breadcrumb_lists() {
 
      */
 
-    function pixlin_widgets_init() {
+    function gents_widgets_init() {
 		
 		
 		 register_sidebar(array(
 
-            'name' => __('Left Sidebar', 'pixlin'),
+            'name' => __('Left Sidebar', 'gents'),
 
-            'description' => __('Left Sidebar Contents', 'pixlin'),
+            'description' => __('Left Sidebar Contents', 'gents'),
 
             'id' => 'left-sidebar',
 
@@ -667,9 +667,9 @@ function pixlin_breadcrumb_lists() {
 		
 		 register_sidebar(array(
 
-            'name' => __('Right Sidebar', 'pixlin'),
+            'name' => __('Right Sidebar', 'gents'),
 
-            'description' => __('Right Sidebar Contents', 'pixlin'),
+            'description' => __('Right Sidebar Contents', 'gents'),
 
             'id' => 'right-sidebar',
 
@@ -688,9 +688,9 @@ function pixlin_breadcrumb_lists() {
 
           register_sidebar(array(
 
-            'name' => __('Footer Column 1', 'pixlin'),
+            'name' => __('Footer Column 1', 'gents'),
 
-            'description' => __('footer.php', 'pixlin'),
+            'description' => __('footer.php', 'gents'),
 
             'id' => 'footer-col1',
 
@@ -708,9 +708,9 @@ function pixlin_breadcrumb_lists() {
 
           register_sidebar(array(
 
-            'name' => __('Footer Column 2', 'pixlin'),
+            'name' => __('Footer Column 2', 'gents'),
 
-            'description' => __('footer.php', 'pixlin'),
+            'description' => __('footer.php', 'gents'),
 
             'id' => 'footer-col2',
 
@@ -728,9 +728,9 @@ function pixlin_breadcrumb_lists() {
 
          register_sidebar(array(
 
-            'name' => __('Footer Column 3', 'pixlin'),
+            'name' => __('Footer Column 3', 'gents'),
 
-            'description' => __('footer.php', 'pixlin'),
+            'description' => __('footer.php', 'gents'),
 
             'id' => 'footer-col3',
 
@@ -747,9 +747,9 @@ function pixlin_breadcrumb_lists() {
 		
 		register_sidebar(array(
 
-            'name' => __('Footer Column 4', 'pixlin'),
+            'name' => __('Footer Column 4', 'gents'),
 
-            'description' => __('footer.php', 'pixlin'),
+            'description' => __('footer.php', 'gents'),
 
             'id' => 'footer-col4',
 
@@ -766,8 +766,8 @@ function pixlin_breadcrumb_lists() {
 		
 		
 		register_sidebar(array(
-            'name' => __('Box One', 'pixlin'),
-            'description' => __('Three Box Content', 'pixlin'),
+            'name' => __('Box One', 'gents'),
+            'description' => __('Three Box Content', 'gents'),
             'id' => 'box-1',
             'before_title' => '<div class="box-title"><h3>',
             'after_title' => '</h3></div>',
@@ -776,8 +776,8 @@ function pixlin_breadcrumb_lists() {
         ));
 		
 		register_sidebar(array(
-            'name' => __('Box Two', 'pixlin'),
-            'description' => __('Three Box Content', 'pixlin'),
+            'name' => __('Box Two', 'gents'),
+            'description' => __('Three Box Content', 'gents'),
             'id' => 'box-2',
             'before_title' => '<div class="box-title"><h3>',
             'after_title' => '</h3></div>',
@@ -786,8 +786,8 @@ function pixlin_breadcrumb_lists() {
         ));
 		
 		register_sidebar(array(
-            'name' => __('Box Three', 'pixlin'),
-            'description' => __('Three Box Content', 'pixlin'),
+            'name' => __('Box Three', 'gents'),
+            'description' => __('Three Box Content', 'gents'),
             'id' => 'box-3',
             'before_title' => '<div class="box-title"><h3>',
             'after_title' => '</h3></div>',
@@ -799,4 +799,4 @@ function pixlin_breadcrumb_lists() {
 
 	
 
-    add_action('widgets_init', 'pixlin_widgets_init');
+    add_action('widgets_init', 'gents_widgets_init');

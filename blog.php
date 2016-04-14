@@ -1,19 +1,23 @@
 <?php
 /**
- * 	Blog Template
- *	Template Name: Blog
+ * Blog Template
+ *  Template Name: Blog
  * @file           blog.php
  * @package        Pixel-Linear 
- * @author         Pixel Theme Studio 
+ * @author        Pixel Theme Studio 
  * @copyright      2014 - 2015 Pixel Theme Studio Themes
  * @license        license.txt
  * @version        Release: 1.0.0
  * @link           http://codex.wordpress.org/Templates
  * @since          available since Release 1.0
  */
-   ?>
-<?php get_header(); ?>
-<?php global $more; $more = 0; ?>
+ ?>
+   
+   
+   
+   <?php get_header(); ?>
+   <?php global $more; $more = 0; ?>
+   
    <?php
    global $wp_query;
    if ( get_query_var('paged') ) {
@@ -33,23 +37,23 @@
   <div class="row">
   
   <?php 
-  	if( pts_get_data('custom_blog_layout') == 'No Sidebar' ){
+  	if( bi_get_data('custom_blog_layout') == 'No Sidebar' ){
   		$colside = "0";
 		$colmain = "12";
-	}elseif(pts_get_data('custom_blog_layout') == 'Left Sidebar'){
+	}elseif(bi_get_data('custom_blog_layout') == 'Left Sidebar'){
 		$colside = "3";
 		$colmain = "9";
-	}elseif(pts_get_data('custom_blog_layout') == 'Right Sidebar'){
+	}elseif(bi_get_data('custom_blog_layout') == 'Right Sidebar'){
 		$colside = "3";
 		$colmain = "9";
-	}elseif(pts_get_data('custom_blog_layout') == 'Left + Right Sidebar'){
+	}elseif(bi_get_data('custom_blog_layout') == 'Left + Right Sidebar'){
 		$colside = "3";
 		$colmain = "6";
 	}
   ?>
   
 
-  <?php if ( pts_get_data('custom_blog_layout') == 'Left Sidebar' || pts_get_data('custom_blog_layout') == 'Left + Right Sidebar' ) { ?>
+  <?php if ( bi_get_data('custom_blog_layout') == 'Left Sidebar' || bi_get_data('custom_blog_layout') == 'Left + Right Sidebar' ) { ?>
     <div class="col-sm-<?php echo $colside; ?>">
             <?php dynamic_sidebar('left-sidebar'); ?>
     </div><!-- col left -->
@@ -65,7 +69,7 @@
                    <header>
                      <h3 class="post-title"><?php the_title(); ?></h3>
                    </header>        
-                   <p><a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>"><i class="fa fa-user"></i> <?php the_author_meta( 'display_name' ); ?> / <i class="fa fa-calendar"></i> <time class="post-date"><?php the_date(); ?></time></p></a>	
+                   <p><i class="fa fa-user"></i> <?php the_author_meta( 'display_name' ); ?> / <i class="fa fa-calendar"></i> <time class="post-date"><?php the_date(); ?></time></p>                  </a>	
                   </section><!-- end of .post-meta -->
 
                   <section class="post-entry">
@@ -82,9 +86,11 @@
     
                       <?php the_content(); ?>
                   </div>
-                  <footer class="col-sm-12 post-footer">
-                    <bd>Tags :</bd> <?php echo the_tags("", " | ", " "); ?>
+                  <?php if(has_tag()) { ?>
+                  <footer class="col-sm-12 post-footer">  
+                    <bd>Tags :</bd> <?php ; echo the_tags("", " | ", ""); ?>
                   </footer>
+                  <?php } ?>
                   <div class="clearfix"></div>
 
                   <?php custom_link_pages(array(
@@ -107,7 +113,7 @@
               </div> <!-- post col -->
               
               
-              <?php if ( pts_get_data('custom_blog_layout') == 'Right Sidebar' || pts_get_data('custom_blog_layout') == 'Left + Right Sidebar' ) { ?>
+              <?php if ( bi_get_data('custom_blog_layout') == 'Right Sidebar' || bi_get_data('custom_blog_layout') == 'Left + Right Sidebar' ) { ?>
                 <div class="col-sm-<?php echo $colside; ?>">
                         <?php dynamic_sidebar('right-sidebar'); ?>
                 </div> <!-- col right -->
@@ -126,8 +132,8 @@
                   <hr>
               <nav>
                 <ul class="pager">
-                 <li class="previous"><?php next_posts_link( __( '&#8249; Older posts', 'pixlin' ) ); ?></li>
-                 <li class="next"><?php previous_posts_link( __( 'Newer posts &#8250;', 'pixlin' ) ); ?></li>
+                 <li class="previous"><?php next_posts_link( __( '&#8249; Older posts', 'gents' ) ); ?></li>
+                 <li class="next"><?php previous_posts_link( __( 'Newer posts &#8250;', 'gents' ) ); ?></li>
                </ul><!-- end of .navigation -->
              </nav>
            </div>
@@ -142,13 +148,13 @@
               <div class="row">
                 <div class="col-sm-12">
           <header>
-           <h1 class="title-404"><?php _e('404 &#8212; Fancy meeting you here!', 'pixlin'); ?></h1>
+           <h1 class="title-404"><?php _e('404 &#8212; Fancy meeting you here!', 'gents'); ?></h1>
          </header>
          <section>
-           <p><?php _e('Don&#39;t panic, we&#39;ll get through this together. Let&#39;s explore our options here.', 'pixlin'); ?></p>
+           <p><?php _e('Don&#39;t panic, we&#39;ll get through this together. Let&#39;s explore our options here.', 'gents'); ?></p>
          </section>
          <footer>
-           <h6><?php _e( 'You can return', 'pixlin' ); ?> <a href="<?php echo home_url(); ?>/" title="<?php esc_attr_e( 'Home', 'pixlin' ); ?>"><?php _e( '&#9166; Home', 'pixlin' ); ?></a> <?php _e( 'or search for the page you were looking for', 'pixlin' ); ?></h6>
+           <h6><?php _e( 'You can return', 'gents' ); ?> <a href="<?php echo home_url(); ?>/" title="<?php esc_attr_e( 'Home', 'gents' ); ?>"><?php _e( '&#9166; Home', 'gents' ); ?></a> <?php _e( 'or search for the page you were looking for', 'gents' ); ?></h6>
            <?php get_search_form(); ?>
          </footer>
          </div>

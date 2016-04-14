@@ -84,7 +84,7 @@ if (!function_exists('of_options'))
 
 		$menu_color = array( 'Default', 'Inverse' );
 		// Homepage Latest Blog or Featured Image
-		$hp_array = array('featured' => __('Featured Hero Unit', 'pixlin'),'latest' => __('Latest Blog Post', 'pixlin'));
+		$hp_array = array('featured' => __('Featured Hero Unit', 'gents'),'latest' => __('Latest Blog Post', 'gents'));
 		// Buttons
 		$btn_color = array("default" => "Default Gray","primary" => "Primary","info" => "Info","success" => "Success","warning" => "Warning","danger" => "Danger","inverse" => "Inverse");
 		$btn_size = array("xs" => "Extra Small","sm" => "Small","default" => "Medium","lg" => "Large");
@@ -1437,78 +1437,84 @@ if (!function_exists('of_options'))
 		$of_options = array();
 
         //General Settings
-		$of_options[] = array( "name"	=> __( 'General', 'pixlin' ),
+		$of_options[] = array( "name"	=> __( 'General', 'gents' ),
 			"type"	=> "heading", "icon" => ADMIN_IMAGES . "icon-settings.png"
 			);
 		
-		$of_options[] = array( "name"	=> __( 'Custom Ads', 'pixlin' ),
-			"desc"	=> __( '', 'pixlin' ),
+		$of_options[] = array( "name"	=> __( 'Custom Ads', 'gents' ),
+			"desc"	=> __( '', 'gents' ),
 			"id"	=> "custom_ads",
 			"std" 	=> "<h3 style=\"margin: 0 0 10px;\">Click on image to get themes</h3>
 						<a href='http://pixelthemestudio.ca/product/pixel-linear/' target='_blank'><img src='".ADMIN_IMAGES."new-ad.jpg' /></a> ",
 			"icon" 	=> true,
 			"type" 	=> "info");
         
-		$of_options[] = array( "name"	=> __( 'Favicon', 'pixlin' ),
-			"desc"	=> __( 'Upload or Paste the URL for your custom favicon.', 'pixlin' ),
+		$of_options[] = array( "name"	=> __( 'Favicon', 'gents' ),
+			"desc"	=> __( 'Upload or paste the URL for your custom favicon.', 'gents' ),
 			"id"	=> "custom_favicon",
 			"std"	=> "",
 			"type"	=> "media");
 	    
-		$of_options[] = array( "name"	=> __( 'Main Logo', 'pixlin' ),
-			"desc"	=> __( 'Use this field to upload your custom logo for use in the theme header. (Recommended 200px x 40px)', 'pixlin' ),
+		$of_options[] = array( "name"	=> __( 'Main Logo', 'gents' ),
+			"desc"	=> __( 'Use this field to upload your custom logo for use in the theme header. (Recommended 200px x 40px)', 'gents' ),
 			"id"	=> "custom_logo",
 			"std"	=> get_template_directory_uri()."/images/logo.png",
 			"mod"   => "",
 			"type"	=> "media",
 			);
 			
-		$of_options[] = array( "name"	=> __( 'Main Layout', 'pixlin' ),
-			"desc"	=> __( 'Select full width or Boxed layout for pages.', 'pixlin' ),
+		$of_options[] = array( "name"	=> __( 'Main Layout', 'gents' ),
+			"desc"	=> __( 'Select full width or Boxed layout for pages.', 'gents' ),
 			"id"	=> "custom_main_layout",
 			"std"	=> "Boxed",
 			"type"	=> "select",
 			"options" => array("Full Width","Boxed"),
 			);
 		
-		$of_options[] = array( "name"	=> __( 'Blog Layout', 'pixlin' ),
-			"desc"	=> __('Select layout for Blog Page with left, right Sidebar. Use widgets to add contents on sidebars', 'pixlin' ),
+		$of_options[] = array( "name"	=> __( 'Blog Layout', 'gents' ),
+			"desc"	=> __('Select layout for Blog Page with left, right Sidebar. Use widgets to add contents on sidebars', 'gents' ),
 			"id"	=> "custom_blog_layout",
 			"std"	=> "No Sidebar",
 			"type"	=> "select",
 			"options" => array("No Sidebar" => "No Sidebar", "Left Sidebar" => "Left Sidebar","Right Sidebar" => "Right Sidebar","Left + Right Sidebar" => "Left + Right Sidebar"),
 			);
 		
-		
+		$of_options[] = array( "name"	=> __( 'Single Post Layout', 'gents' ),
+			"desc"	=> __('Select layout for Single Post View with left, right Sidebar. Use widgets to add contents on sidebars', 'gents' ),
+			"id"	=> "custom_single_post_layout",
+			"std"	=> "No Sidebar",
+			"type"	=> "select",
+			"options" => array("No Sidebar" => "No Sidebar", "Left Sidebar" => "Left Sidebar","Right Sidebar" => "Right Sidebar","Left + Right Sidebar" => "Left + Right Sidebar"),
+			);
 		
 
 		// Home Settings
-		$of_options[] = array( "name"	=> __( 'Home Settings', 'pixlin' ),
+		$of_options[] = array( "name"	=> __( 'Home Settings', 'gents' ),
 			"type"	=> "heading");
 			
-		$of_options[] = array( "name"	=> __( 'Enable Slider', 'pixlin' ),
-			"desc"	=> __( 'Click on button to enable slider on homepage', 'pixlin' ),
+		$of_options[] = array( "name"	=> __( 'Enable Slider', 'gents' ),
+			"desc"	=> __( 'Click on button to enable slider on homepage', 'gents' ),
 			"id"	=> "enable_disable_slider",
 			"std" 		=> 0,
-			"on"	=> __( 'Enable', 'pixlin' ),
-			"off"	=> __( 'Disable', 'pixlin' ),
+			"on"	=> __( 'Enable', 'gents' ),
+			"off"	=> __( 'Disable', 'gents' ),
 			"type"	=> "switch",
 			);
 			
-		$of_options[] = array( "name"	=> __( 'Slider Options', 'pixlin' ),
-			"desc"	=> __( 'Unlimited slider with drag and drop sortings.<br>(recommended size of image 1200px x 400px)', 'pixlin' ),
+		$of_options[] = array( "name"	=> __( 'Slider Options', 'gents' ),
+			"desc"	=> __( 'Unlimited slider with drag and drop sortings. (Recommended size xpx x ypx)', 'gents' ),
 			"id"	=> "custom_slider",
 			"std" 		=> "",
 			"type"	=> "slider",
 			);
 			
 		
-		$of_options[] = array( "name"	=> __( 'Enable 3 boxes on homepage', 'pixlin' ),
-			"desc"	=> __( 'Use widgets to add content in 3 boxex', 'pixlin' ),
+		$of_options[] = array( "name"	=> __( 'Enable 3 Boxes On Homepage', 'gents' ),
+			"desc"	=> __( 'Use widgets to add content in 3 boxes', 'gents' ),
 			"id"	=> "enable_disable_3box",
 			"std" 		=> 0,
-			"on"	=> __( 'Enable', 'pixlin' ),
-			"off"	=> __( 'Disable', 'pixlin' ),
+			"on"	=> __( 'Enable', 'gents' ),
+			"off"	=> __( 'Disable', 'gents' ),
 			"type"	=> "switch",
 			);
 			
@@ -1516,87 +1522,184 @@ if (!function_exists('of_options'))
 		
 			
 	   
-	  
+	   // Styling Options
+		$of_options[] = array( "name"	=> __( 'Styling Options', 'gents' ),
+			"type"	=> "heading");
+		
+		$of_options[] = array( "name"	=> __( 'Body Background Color', 'gents' ),
+			"desc"	=> __( 'Pick a background color for body<br>(default: #fff).', 'gents' ),
+			"id"	=> "custom_body_bg",
+			"std"	=> "#fff",
+			"type"	=> "color",
+			);
+			
+		$of_options[] = array( "name"	=> __( 'Header Background Color', 'gents' ),
+			"desc"	=> __( 'Pick a background color for header<br>(default: #fff).', 'gents' ),
+			"id"	=> "custom_header_bg",
+			"std"	=> "#fff",
+			"type"	=> "color",
+			);	
+			
+		$of_options[] = array( "name"	=> __( 'Footer Background Color', 'gents' ),
+			"desc"	=> __( 'Pick a background color for footer<br>(default: #333).', 'gents' ),
+			"id"	=> "custom_footer_bg",
+			"std"	=> "#333",
+			"type"	=> "color",
+			);
+
+		$of_options[] = array( "name"	=> __( 'Footer Bottom Background Color', 'gents' ),
+			"desc"	=> __( 'Pick a background color for footer copyright<br>(default: #000).', 'gents' ),
+			"id"	=> "custom_bottom_footer_bg",
+			"std"	=> "#000",
+			"type"	=> "color",
+			);
+			
+		$of_options[] = array( "name"	=> __( 'Box Layout Background Color', 'gents' ),
+			"desc"	=> __( 'Pick a background color for box layout.<br>*Apply only when box layout is selected.(default: #ddd).', 'gents' ),
+			"id"	=> "custom_boxed_bg",
+			"std" => "#ddd",
+			"type"	=> "color");
+		
+		$of_options[] = array( "name"	=> __( 'Box Layout Background Image', 'gents' ),
+			"desc"	=> __( 'Pick a background image for box layout.<br>*Apply only when box layout is selected.', 'gents' ),
+			"id"	=> "custom_boxed_bgImg",
+			"std"	=> "",
+			"type"	=> "media",
+			);
+			
+		$of_options[] = array( "name"	=> __( 'Custom CSS', 'gents' ),
+			"desc"	=> __( 'Quickly add some CSS to your theme by adding it to this block.<br> Use !important to override properties.', 'gents' ),
+			"id"	=> "custom_css_box",
+			"std"	=> "",
+			"type" 		=> "textarea",
+			);
+			
+			
+			
+		// Typography
+		$of_options[] = array( "name"	=> __( 'Typography', 'gents' ),
+			"type"	=> "heading", "icon" => ADMIN_IMAGES . "typography.png");
+		
+		$of_options[] = array( "name"	=> __( 'Body Font', 'gents' ),
+			"desc"	=> __( 'Specify the body font properties.', 'gents' ),
+			"id"	=> "custom_body_font",
+			"std"	=> array('size' => '16px','style' => 'normal','color' => '#000000'),
+			"type"	=> "typography",
+			);
+			
+		$of_options[] = array( "name"	=> __( 'Google Fonts', 'gents' ),
+			"desc"	=> __( '','gents' ),
+			"id"	=> "google_fonts_intro",
+			"std" => "<h3 style='margin: 0;''>Google Fonts</h3>",
+			"icon" => true,
+			"type"	=> "info",
+			);
+			
+		$of_options[] = array( "name"	=> __( 'Select Body Font Family', 'gents' ),
+			"desc"	=> __( 'Select a font family for body text this will override Standard Font.', 'gents' ),
+			"id"	=> "custom_body_family",
+			"std"	=> "Select Font",
+			"type"	=> "select",
+			"options" => $google_fonts
+			);
+			
+		$of_options[] = array( "name"	=> __( 'Select Heading Font', 'gents' ),
+			"desc"	=> __( 'Select a font family for headings', 'gents' ),
+			"id"	=> "custom_heading_family",
+			"std" => "Select Font",
+			"type"	=> "select",
+			"options" => $google_fonts
+			);
+			
+		$of_options[] = array( "name"	=> __( 'Select Footer Heading Font', 'gents' ),
+			"desc"	=> __( 'Select a font family for footer headings', 'gents' ),
+			"id"	=> "custom_footer_family",
+			"std" => "Select Font",
+			"type"	=> "select",
+			"options" => $google_fonts
+			);
+			
+			
 			
 		// Social Settings
-		$of_options[] = array( "name"	=> __( 'Social Settings', 'pixlin'),
+		$of_options[] = array( "name"	=> __( 'Social Settings', 'gents'),
 			"type"	=> "heading", "icon" => ADMIN_IMAGES . "social_setting.png");
 			
-		$of_options[] = array( "name"	=> __( 'Enable Social Icons', 'pixlin' ),
-			"desc"	=> __( 'Click on button to enable Social Icons at bottom', 'pixlin' ),
+		$of_options[] = array( "name"	=> __( 'Enable Social Icons', 'gents' ),
+			"desc"	=> __( 'Click on button to enable Social Icons at bottom', 'gents' ),
 			"id"	=> "enable_disable_sm",
 			"std"	=> '1',
-			"on"	=> __( 'Enable', 'pixlin' ),
-			"off"	=> __( 'Disable', 'pixlin' ),
+			"on"	=> __( 'Enable', 'gents' ),
+			"off"	=> __( 'Disable', 'gents' ),
 			"type"	=> "switch");
 			
-		$of_options[] = array( "name"	=> __( 'Social Icons', 'pixlin' ),
-			"desc"	=> __( '','pixlin' ),
+		$of_options[] = array( "name"	=> __( 'Social Icons', 'gents' ),
+			"desc"	=> __( '','gents' ),
 			"id"	=> "sco_ico_lbl",
 			"std" => "<h3 style=\"margin: 0 0 10px;\">Insert your social link to show the icon.</h3>",
 			"icon" => true,
 			"type"	=> "info",
 			);
 			
-		$of_options[] = array( "name"	=> __( 'Facebook', 'pixlin' ),
-			"desc"	=> __( 'Insert your custom link to show the Facebook icon. Leave blank to hide icon.', 'pixlin' ),
+		$of_options[] = array( "name"	=> __( 'Facebook', 'gents' ),
+			"desc"	=> __( 'Insert your custom link to show the Facebook icon. Leave blank to hide icon.', 'gents' ),
 			"id"	=> "custom_facebook_link",
 			"std" => "http://www.facebook.com",
 			"type"	=> "text",
 			);
 			
-		$of_options[] = array( "name"	=> __( 'Twitter', 'pixlin' ),
-			"desc"	=> __( 'Insert your custom link to show the Twitter icon. Leave blank to hide icon.', 'pixlin' ),
+		$of_options[] = array( "name"	=> __( 'Twitter', 'gents' ),
+			"desc"	=> __( 'Insert your custom link to show the Twitter icon. Leave blank to hide icon.', 'gents' ),
 			"id"	=> "custom_twitter_link",
 			"std" => "http://www.twitter.com",
 			"type"	=> "text",
 			);
 			
-		$of_options[] = array( "name"	=> __( 'Google+', 'pixlin' ),
-			"desc"	=> __( 'Insert your custom link to show the Google+ icon. Leave blank to hide icon.', 'pixlin' ),
+		$of_options[] = array( "name"	=> __( 'Google+', 'gents' ),
+			"desc"	=> __( 'Insert your custom link to show the Google+ icon. Leave blank to hide icon.', 'gents' ),
 			"id"	=> "custom_Googlep_link",
 			"std" => "http://www.google.com",
 			"type"	=> "text",
 			);
 			
-		$of_options[] = array( "name"	=> __( 'Linkedin', 'pixlin' ),
-			"desc"	=> __( 'Insert your custom link to show the Linkedin icon. Leave blank to hide icon.', 'pixlin' ),
+		$of_options[] = array( "name"	=> __( 'Linkedin', 'gents' ),
+			"desc"	=> __( 'Insert your custom link to show the Linkedin icon. Leave blank to hide icon.', 'gents' ),
 			"id"	=> "custom_linkedin_link",
 			"std" => "http://www.linkedin.com",
 			"type"	=> "text",
 			);
 			
-		$of_options[] = array( "name"	=> __( 'Instagram', 'pixlin' ),
-			"desc"	=> __( 'Insert your custom link to show the Instagram icon. Leave blank to hide icon.', 'pixlin' ),
+		$of_options[] = array( "name"	=> __( 'Instagram', 'gents' ),
+			"desc"	=> __( 'Insert your custom link to show the Instagram icon. Leave blank to hide icon.', 'gents' ),
 			"id"	=> "custom_instagram_link",
 			"std" => "http://www.instagram.com",
 			"type"	=> "text",
 			);
 			
-		$of_options[] = array( "name"	=> __( 'Pinterest', 'pixlin' ),
-			"desc"	=> __( 'Insert your custom link to show the Pinterest icon. Leave blank to hide icon.', 'pixlin' ),
+		$of_options[] = array( "name"	=> __( 'Pinterest', 'gents' ),
+			"desc"	=> __( 'Insert your custom link to show the Pinterest icon. Leave blank to hide icon.', 'gents' ),
 			"id"	=> "custom_pinterest_link",
 			"std" => "http://www.pinterest.com",
 			"type"	=> "text",
 			);
 			
-		$of_options[] = array( "name"	=> __( 'Reddit', 'pixlin' ),
-			"desc"	=> __( 'Insert your custom link to show the Reddit icon. Leave blank to hide icon.', 'pixlin' ),
+		$of_options[] = array( "name"	=> __( 'Reddit', 'gents' ),
+			"desc"	=> __( 'Insert your custom link to show the Reddit icon. Leave blank to hide icon.', 'gents' ),
 			"id"	=> "custom_reddit_link",
 			"std" => "http://www.reddit.com",
 			"type"	=> "text",
 			);
 			
-		$of_options[] = array( "name"	=> __( 'Tumblr', 'pixlin' ),
-			"desc"	=> __( 'Insert your custom link to show the Tumblr icon. Leave blank to hide icon.', 'pixlin' ),
+		$of_options[] = array( "name"	=> __( 'Tumblr', 'gents' ),
+			"desc"	=> __( 'Insert your custom link to show the Tumblr icon. Leave blank to hide icon.', 'gents' ),
 			"id"	=> "custom_tumblr_link",
 			"std" => "http://www.tumblr.com",
 			"type"	=> "text",
 			);
 		
 			
-		$of_options[] = array( "name"	=> __( 'Stumbleupon', 'pixlin' ),
-			"desc"	=> __( 'Insert your custom link to show the Stumbleupon icon. Leave blank to hide icon.', 'pixlin' ),
+		$of_options[] = array( "name"	=> __( 'Stumbleupon', 'gents' ),
+			"desc"	=> __( 'Insert your custom link to show the Stumbleupon icon. Leave blank to hide icon.', 'gents' ),
 			"id"	=> "custom_stumbleupon_link",
 			"std" => "http://www.stumbleupon.com",
 			"type"	=> "text",
@@ -1609,102 +1712,62 @@ if (!function_exists('of_options'))
 	
 
 		//Footer Settings					
-		$of_options[] = array( "name"	=> __( 'Footer Settings', 'pixlin' ),
+		$of_options[] = array( "name"	=> __( 'Footer Settings', 'gents' ),
 			"type"	=> "heading", "icon" => ADMIN_IMAGES . "icon-footer.png");
 			
-		$of_options[] = array( "name"	=> __( 'Footer Logo', 'pixlin' ),
-			"desc"	=> __( 'Upload your footer logo here.', 'pixlin' ),
+		$of_options[] = array( "name"	=> __( 'Footer Logo', 'gents' ),
+			"desc"	=> __( 'Upload your footer logo here.', 'gents' ),
 			"id"	=> "custom_footer_logo",
 			"std" => "",
 			"type"	=> "media",
 			);
 			
-		$of_options[] = array( "name"	=> __( 'Copyright Text', 'pixlin' ),
-			"desc"	=> __( 'Copyright information goes here','pixlin' ),
+		$of_options[] = array( "name"	=> __( 'Copyright Text', 'gents' ),
+			"desc"	=> __( 'Copyright information goes here','gents' ),
 			"id"	=> "custom_copy_info",
-			"std" => "Copyright &copy; 2014 Pixel Theme Studio. All rights reserved.",
+			"std" => "Copyright &copy; 2015 Pixel Theme Studio. All rights reserved.",
 			"type"	=> "textarea",
 			);
-	
-
-	   // Backup Options
-		
-		$of_options[] = array( 	"name" 		=> "",
-			"id" 		=> "of_backup",
-			);
-
-		$of_options[] = array( 	"name" 		=> "",
-			"id" 		=> "of_transfer",
-			);
-
 			
-	
+			
 			
 		//Tracking Code	
-	   
-		$of_options[] = array( "name"	=> "",
-			"id"	=> "tracking_header",
-			);    
+	    $of_options[] = array( "name"	=> __( 'Tracking Code', 'gents' ),
+			"type"	=> "heading", "icon" => ADMIN_IMAGES . "icon-tracking.png");
 
-		$of_options[] = array( "name"	=> "",
+		$of_options[] = array( "name"	=> __( 'Header Tracking Code', 'gents' ),
+			"desc"	=> __( 'Paste your Google Analytics (or other) tracking code here. This will be added into the header template of your theme.', 'gents' ),
+			"id"	=> "tracking_header",
+			"std"	=> "",
+			"type"	=> "textarea");    
+
+		$of_options[] = array( "name"	=> __( 'Footer Tracking Code', 'gents' ),
+			"desc"	=> __( 'Paste your Google Analytics (or other) tracking code here. This will be added into the footer template of your theme.', 'gents' ),
 			"id"	=> "tracking_footer",
+			"std"	=> "",
+			"type"	=> "textarea");
+			
+	/*
+
+	   // Backup Options
+		$of_options[] = array( 	"name" 		=> "Backup Options",
+			"type" 		=> "heading",
 			);
-			
-							
-							
-			
-		// Typography
-		
-		$of_options[] = array( "name"	=> "",
-			"id"	=> "custom_body_font",
+
+		$of_options[] = array( 	"name" 		=> "Backup and Restore Options",
+			"id" 		=> "of_backup",
+			"std" 		=> "",
+			"type" 		=> "backup",
+			"desc" 		=> 'You can use the two buttons below to backup your current options, and then restore it back at a later time. This is useful if you want to experiment on the options but would like to keep the old settings in case you need it back.',
 			);
-			
-		$of_options[] = array( "name"	=> "",
-			"id"	=> "google_fonts_intro",
-			);
-			
-		$of_options[] = array( "name"	=> "",
-			"id"	=> "custom_body_family",
-			);
-			
-		$of_options[] = array( "name"	=> "",
-			"id"	=> "custom_heading_family",
-			);
-			
-		$of_options[] = array( "name"	=> "",
-			"id"	=> "custom_footer_family",
-			);
-			
-			
-			
-	 // Styling Options
-	  
-		$of_options[] = array( "name"	=> "",
-			"id"	=> "custom_body_bg",
-			);
-			
-		$of_options[] = array( "name"	=> "",
-			"id"	=> "custom_header_bg",
-			);	
-			
-		$of_options[] = array( "name"	=> "",
-			"id"	=> "custom_footer_bg",
-			);	
-			
-		$of_options[] = array( "name"	=> "",
-			"id"	=> "custom_boxed_bg",
-			);
-		
-		$of_options[] = array( "name"	=> "",
-			"id"	=> "custom_boxed_bgImg",
-		);
-			
-		$of_options[] = array( "name"	=> "",
-			"id"	=> "custom_css_box",
-			);
-			
-			
-	
+
+		$of_options[] = array( 	"name" 		=> "Transfer Theme Options Data",
+			"id" 		=> "of_transfer",
+			"std" 		=> "",
+			"type" 		=> "transfer",
+			"desc" 		=> 'You can tranfer the saved options data between different installs by copying the text inside the text box. To import data from another install, replace the data in the text box with the one from another install and click "Import Options".',
+			); */
+
 	}//End function: of_options()
 }//End chack if function exists: of_options()
 ?>

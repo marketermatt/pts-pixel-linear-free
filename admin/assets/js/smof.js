@@ -416,7 +416,7 @@ jQuery(document).ready(function($){
 	/** AJAX Save Options */
 	$('#of_save').live('click',function() {
 		var nonce = $('#security').val();
-		$( ".img_error" ).removeClass( "disp_none" ).addClass( "img_error" );
+			
 		var className = $('.cb-enable, .selected').attr('class');
 			
 		var count_image=0;
@@ -428,13 +428,7 @@ jQuery(document).ready(function($){
         $('.img_error').html("One or more slides are missing image(s)");
 		return false;
 		}
-		else{
-			$( ".img_error" ).addClass( "disp_none" );
-		}
-		
-		var nonce = $('#security').val();
-		
-					
+							
 		$('.ajax-loading-img').fadeIn();
 		
 		//get serialized data from all our option fields			
@@ -465,8 +459,7 @@ jQuery(document).ready(function($){
 			}, 2000);
 		});
 			
-	return false; 
-					
+	return false;
 	});   
 	
 	

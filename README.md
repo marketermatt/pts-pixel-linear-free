@@ -1,2 +1,2 @@
-# pts-pixel-linear-free
-Pixel Linear Free
+# pts-pixel-linear
+Pixel Linear Theme

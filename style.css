@@ -2,18 +2,23 @@
 Theme Name: Pixel-Linear
 Theme URI: http://pixelthemestudio.ca/product/pixel-linear/
 Description: Main Stylesheet for Pixel-Linear with all the Twitter Bootstrap elements and features.
-Text Domain: Pixel-Linear
+
 Author: Pixel Theme Studio
 Author URI: http://pixelthemestudio.ca
 Version: 1.0.0
 Tags: white, black, gray, light, custom-menu, custom-header, custom-background, one-column, two-columns, left-sidebar, right-sidebar, fluid-layout, theme-options, threaded-comments, full-width-template, sticky-post, translation-ready, fixed-layout
+
 License: GNU General Public License, version 3 (GPLv3)
-License URI: http://www.gnu.org/licenses/quick-guide-gplv3.html
+License URI: license.txt
 
 CSS Rules: Sorted alphabetically for better organization.
-This theme, like WordPress, is licensed under the GPL.
-Use it to make something cool, have fun, and share what you've learned with others.
+
 */
+
+
+
+
+
 
 
 body {
@@ -22,7 +27,7 @@ body {
 
 	-webkit-font-smoothing: antialiased;
 
-	background-color: #ddd;
+	background-color: #ffffff;
 
 	color: #555;
 
@@ -136,8 +141,7 @@ hr {
 
 
 
-header .navbar-inverse{ background-color: #fff;  }
-
+.navbar-inverse { background-color: #fff;  }
 
 
 
@@ -193,14 +197,13 @@ header .navbar-inverse{ background-color: #fff;  }
 
 /* +++++ WRAP SECTIONS +++++ */
 
-
 #top-search{ background:#b1bcc4; padding: 0;}
 #searchform{ padding:8px 0;}
 #top-search .navbar-nav>li>a{ color:#fff;}
 
 #top-search .nav>li>a:hover, #top-search .nav>li>a:focus {color: #c2862d; } 
 
-#main, #wrapper , #white, #grey{background-color: #ffffff;}
+#main, #wrapper{background-color: #ffffff;}
 #main section{ padding-bottom: 20px; padding-top: 20px; }
 #main h1.title{ font-weight:400; font-size:26px;}
 #main h1.title:after{ display:block; background:#f8434a; content:""; width:110px; height:1px;  margin-left:auto; margin-right:auto;margin-top: 15px; }
@@ -233,9 +236,6 @@ header .navbar-inverse{ background-color: #fff;  }
 
 #socket{ background-color:#1d1d1d; padding:15px 0; color:#c5c5c5;}
 #socket p{ margin-top:20px}
-#socket h2 {
-color: #968E8E;
-}
 
 
 
@@ -267,13 +267,13 @@ article.post{ margin-bottom:50px;}
     background-size: cover;
     -o-background-size: cover;
 }
-
 .item.active.left h1, .item.active.left h3, .item.active.left p, .item.active.left h2 {display:none;}
 
 .carousel-caption h1 {margin-bottom:10px}
 .carousel-caption p {font-size: 20px;
   color: #36454f;
   font-weight: bold;}
+
 
 /* Three Box */
 #box-wrap{ background:#f9f9f9;}
@@ -419,7 +419,6 @@ bt { font-size: 12px; }
 @media only screen and (max-width: 340px){
 	#pixi-slider{ height: 170px;} 
 }
-
 /*hover class*/
 .navbar-nav li:hover ul.dropdown-menu{
     display:block !important;
@@ -432,7 +431,6 @@ bt { font-size: 12px; }
 	top: 0px;
 	left: 100%;
 }
-
 .textwidget iframe,.textwidget img {
   max-width: 100% !important;
 }

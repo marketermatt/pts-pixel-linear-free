@@ -5,12 +5,12 @@
  *
  * @file           comments.php
  * @package        Pixel-Linear 
- * @author         Pixel Theme Studio 
- * @copyright      2015 Pixel Theme Studio Themes
+ * @author        Pixel Theme Studio 
+ * @copyright      2010 - 2014 Gents Themes
  * @license        license.txt
  * @version        Release: 1.0.0
  * @link           http://codex.wordpress.org/Theme_Development#Comments_.28comments.php.29
- * @since          Available since Release 1.0
+ * @since          available since Release 1.0
  */
 ?>
 <?php if ( post_password_required() )
@@ -30,7 +30,7 @@
         </h2>
 
         <ol class="comment-list">
-            <?php wp_list_comments( array( 'callback' => 'pixlin_comment', 'style' => 'ol' ) ); ?>
+            <?php wp_list_comments( array( 'callback' => 'gents_comment', 'style' => 'ol' ) ); ?>
         </ol><!-- .comment-list -->
 
         <?php

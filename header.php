@@ -23,8 +23,8 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
 <title><?php wp_title('&#124;', true, 'right'); ?></title>
-<?php if( pts_get_data('custom_favicon') !== '' ) : ?>
-        <link rel="icon" type="image/png" href="<?php echo pts_get_data('custom_favicon'); ?>" />
+<?php if( bi_get_data('custom_favicon')['url'] !== '' ) : ?>
+        <link rel="icon" type="image/png" href="<?php echo bi_get_data('custom_favicon')['url']; ?>" />
     <?php endif; ?>
 
 <link rel="profile" href="http://gmpg.org/xfn/11" />
@@ -37,14 +37,14 @@
     <![endif]-->
 
 <!-- include fonts -->
-<?php if( pts_get_data('custom_body_family') != 'Select Font' ) { ?>
-	<link rel='stylesheet'  href='//fonts.googleapis.com/css?family=<?php echo pts_get_data('custom_body_family'); ?>%3A300italic%2C400italic%2C600italic%2C300%2C400%2C600&#038;subset=latin%2Clatin-ext&#038;ver=4.1' type='text/css' media='all' />
+<?php if( bi_get_data('custom_body_family') != 'Select Font' ) { ?>
+	<link rel='stylesheet'  href='//fonts.googleapis.com/css?family=<?php echo bi_get_data('custom_body_family'); ?>%3A300italic%2C400italic%2C600italic%2C300%2C400%2C600&#038;subset=latin%2Clatin-ext&#038;ver=4.1' type='text/css' media='all' />
 <?php } ?>
-<?php if( pts_get_data('custom_heading_family') != 'Select Font' ) { ?>
-	<link rel='stylesheet'  href='//fonts.googleapis.com/css?family=<?php echo pts_get_data('custom_heading_family'); ?>%3A300italic%2C400italic%2C600italic%2C300%2C400%2C600&#038;subset=latin%2Clatin-ext&#038;ver=4.1' type='text/css' media='all' />
+<?php if( bi_get_data('custom_heading_family') != 'Select Font' ) { ?>
+	<link rel='stylesheet'  href='//fonts.googleapis.com/css?family=<?php echo bi_get_data('custom_heading_family'); ?>%3A300italic%2C400italic%2C600italic%2C300%2C400%2C600&#038;subset=latin%2Clatin-ext&#038;ver=4.1' type='text/css' media='all' />
 <?php } ?>
-<?php if( pts_get_data('custom_footer_family') != 'Select Font' ) { ?>
-	<link rel='stylesheet'  href='//fonts.googleapis.com/css?family=<?php echo pts_get_data('custom_footer_family'); ?>%3A300italic%2C400italic%2C600italic%2C300%2C400%2C600&#038;subset=latin%2Clatin-ext&#038;ver=4.1' type='text/css' media='all' />
+<?php if( bi_get_data('custom_footer_family') != 'Select Font' ) { ?>
+	<link rel='stylesheet'  href='//fonts.googleapis.com/css?family=<?php echo bi_get_data('custom_footer_family'); ?>%3A300italic%2C400italic%2C600italic%2C300%2C400%2C600&#038;subset=latin%2Clatin-ext&#038;ver=4.1' type='text/css' media='all' />
 <?php } ?>
 
 
@@ -54,27 +54,87 @@
 
 <!-- theme options css -->
 <style type="text/css">
-<?php if( pts_get_data('custom_main_layout') == 'Boxed' ) { ?>
+<?php if( bi_get_data('custom_main_layout') == 'Boxed' ) { ?>
 body{ 
 	max-width:1200px; margin-left:auto; margin-right:auto;
+	<?php if( bi_get_data('custom_boxed_bg') != '' ) { ?>
+		background-color: <?php echo bi_get_data('custom_boxed_bg'); ?>;
+	<?php } ?>
+	<?php if( bi_get_data('custom_boxed_bgImg')['url'] != '' ) { ?>
+		background-image: url('<?php echo bi_get_data('custom_boxed_bgImg')['url']; ?>');
+		background-position:center top;
+	<?php } ?>	
+}
+<?php } ?>
+<?php if( bi_get_data('custom_body_family') != 'Select Font' ) { ?>
+body{
+	font-family: <?php echo bi_get_data('custom_body_family'); ?>;
+}
+<?php } ?>
+<?php if( bi_get_data('custom_heading_family') != 'Select Font' ) { ?>
+h1, h2, h3, h4, h5, h6 {
+	font-family: <?php echo bi_get_data('custom_heading_family'); ?>;
+}
+<?php } ?>
+<?php if( bi_get_data('custom_footer_family') != 'Select Font' ) { ?>
+#footer  h3{
+	font-family: <?php echo bi_get_data('custom_footer_family'); ?>;
 }
 <?php } ?>
 
 
+
+#wrapper, #white, #grey{
+	<?php if( bi_get_data('custom_body_bg') != '' ) { ?>
+		background-color: <?php echo bi_get_data('custom_body_bg'); ?>;
+	<?php } ?>
+}
+header .navbar-inverse{
+	<?php if( bi_get_data('custom_header_bg') != '' ) { ?>
+		background-color: <?php echo bi_get_data('custom_header_bg'); ?>;
+	<?php } ?>
+}
+#footer{
+	<?php if( bi_get_data('custom_footer_bg') != '' ) { ?>
+		background-color: <?php echo bi_get_data('custom_footer_bg'); ?>;
+	<?php } ?>
+}
+#socket{
+	<?php if( bi_get_data('custom_bottom_footer_bg') != '' ) { ?>
+		background-color: <?php echo bi_get_data('custom_bottom_footer_bg'); ?>;
+	<?php } ?>
+}
+
+/* Typography */
+<?php $optn_typo = bi_get_data("custom_body_font"); ?>
+#wrapper p{ 
+	<?php if( $optn_typo['size'] != '' ) { ?>
+		font-size: <?php echo $optn_typo['size']; ?>;
+	<?php } ?>
+	<?php if( $optn_typo['style'] != '' ) { ?>
+		font-style: <?php echo $optn_typo['style']; ?>;
+		
+	<?php } ?>
+	<?php if( $optn_typo['color'] != '' ) { ?>
+		color: <?php echo $optn_typo['color']; ?>;
+	<?php } ?>
+}
 </style>
 
 
 </head>
 
 <body <?php body_class(); ?>>
+<?php //global $pixel_linear_options; print_r($pixel_linear_options);
+//echo bi_get_data('custom_main_layout'); ?>
           
-<?php pixlin_container(); // before container hook ?>
+<?php gents_container(); // before container hook ?>
 
          
-    <?php pixlin_header(); // before header hook ?>
+    <?php gents_header(); // before header hook ?>
     <header>
    
-    <?php pixlin_in_header(); // header hook ?>
+    <?php gents_in_header(); // header hook ?>
 
 <nav role="navigation">
     <div class="navbar navbar-inverse navbar-static-top">
@@ -89,15 +149,23 @@ body{
               <span class="icon-bar"></span>
             </button>
 
-            <?php if( pts_get_data('custom_logo') != '' ) { ?>
+            <?php if( bi_get_data('custom_logo')['url'] != '' ) { ?>
             <div id="logo"><a href="<?php echo home_url(); ?>/" title="<?php bloginfo( 'name' ); ?>" rel="home">
-                <img src="<?php echo pts_get_data('custom_logo'); ?>" alt="<?php bloginfo( 'name' ) ?>" />
+                <img src="<?php echo bi_get_data('custom_logo')['url']; ?>" alt="<?php bloginfo( 'name' ) ?>" />
             </a></div>
             <?php } else { ?>
-			<a href="<?php echo home_url(); ?>">
-            <?php _e("<h2>Pixel Linear</h2>","pixlin");?>
-			</a>
-            <?php  } ?>
+            <?php if (is_front_page()) { ?>
+            <div id="logo"><a href="<?php echo home_url(); ?>/" title="<?php bloginfo( 'name' ); ?>" rel="home">
+                <img src="<?php echo get_template_directory_uri()."/images/logo.png"; ?>" alt="<?php bloginfo( 'name' ) ?>" />
+            </a></div>
+            <?php } else { ?>
+            <div id="logo"><a href="<?php echo home_url(); ?>/" title="<?php bloginfo( 'name' ); ?>" rel="home">
+                <img src="<?php echo get_template_directory_uri()."/images/logo.png"; ?>" alt="<?php bloginfo( 'name' ) ?>" />
+            </a></div>
+            <?php } } ?>
+			<?php if( bi_get_data('logo_tagline') != '' ) { ?>
+				<div id="logo_tagline"><?php echo bi_get_data('logo_tagline');?></div>
+			<?php } ?>
         </div>
           <div class="navbar-collapse collapse navbar-responsive-collapse">
 			   <?php
@@ -159,81 +227,60 @@ body{
  
     </header><!-- end of header -->
     
-    <?php
+    
+   <?php
 	global $post;
 	$enable_disable_slider = get_post_meta( $post->ID, '_cmb_enable_disable_slider', true );
 	?>
     
-        <?php if( (is_front_page() && bi_get_data('enable_disable_slider') == '1') || (is_page() && $enable_disable_slider == 'on' && bi_get_data('enable_disable_slider') == '1') ) { $pixslider = bi_get_data('custom_slider'); ?>
+    <?php if( (is_front_page() && bi_get_data('enable_disable_slider') == '1') || (is_page() && $enable_disable_slider == 'on' && bi_get_data('enable_disable_slider') == '1') ) { $pixslider = bi_get_data('custom_slider'); ?>
     <!-- slider -->
+     <?php if($pixslider[1]['image']!=""){ ?>
     <section id="pixi-slider" class="carousel slide">
             <!-- Indicators -->
-				<?php if(sizeof($pixslider)>1){ ?>
             <ol class="carousel-indicators">
                 <?php for($sCnt=0; $sCnt < sizeof($pixslider);  $sCnt++){ ?>
                 	<li data-target="#pixi-slider" data-slide-to="<?php echo $sCnt; ?>" <?php if($sCnt==0){?> class="active" <?php } ?> ></li>
                 <?php }?>
             </ol>
-    <?php  } ?>
+    
             <!-- Wrapper for Slides -->
-			
-             <div class="carousel-inner">
-                <?php $iCnt=0; foreach( $pixslider as $slide ) { 
+            <div class="carousel-inner">
+                <?php $iCnt=0; foreach( $pixslider as $slide ) {
+				if($slide['link']==""){$slide['link']="#";}
 				 if($iCnt=='0'){ $addAct = "active"; }else{$addAct = "";}
-				 if($slide['link']!=""){
                     echo (
-                        "  <div class='item ". $addAct ."'>
-                        	<a href='". $slide['link'] ."' target='_blank'><div class='fill' style='background-image:url(". $slide['url'] .");'></div>
-                        	<div class='carousel-caption'>
-								<h1>".$slide['title']."</h1>
-                            	<p>".$slide['description']."</p>
-                        	</div>
-							</a>
-                    	</div> "
-                    );
-					}else{
-					 echo (
                         "<div class='item ". $addAct ."'>
-                        	<div class='fill' style='background-image:url(". $slide['url'] .");'></div>
+                        	<a href=". $slide['link'] .">
+							<div class='fill' style='background-image:url(". $slide['image'] .");'></div>
+							</a>
                         	<div class='carousel-caption'>
+								<h3>".$slide['title']."</h3>
                             	<p>".$slide['description']."</p>
                         	</div>
                     	</div>"
                     );
-					
-					}
-                $iCnt++; }?>
+                $iCnt++; }
+				?>
             </div>
-			
     
             <!-- Controls -->
-			<script language="">
-			/*
-			//jQuery( document ).ready(function($) {
-            //alert( "ready!" );
-			//$( ".icon-prev" ).trigger( "click" );
-			jQuery(window).on('load', function ($) {
-			setTimeout(function() {
-              $('.icon-next').trigger('click');
-               }, 500);
-             });
-			*/
-			</script>
-			<?php if(sizeof($pixslider)>1){ ?>
+			<?php if($slide['order']>1){?>
             <a class="left carousel-control" href="#pixi-slider" data-slide="prev">
                 <span class="icon-prev"></span>
             </a>
             <a class="right carousel-control" href="#pixi-slider" data-slide="next">
                 <span class="icon-next"></span>
             </a>
-			<?php } ?>
+			<?php }else{}?>
     </section>
     <!-- slider ends -->
-    <?php } ?>
+    <?php }
+	} ?>
     
 
 
-<?php if( pts_get_data('enable_disable_3box') == '1' && is_front_page() ) { ?>
+<?php if( bi_get_data('enable_disable_3box') == '1' && is_front_page() ) { ?>
 <!-- Three Box -->
 <div id="box-wrap">
 	<div class="container">
@@ -255,13 +302,13 @@ body{
     
 
 
-<?php pixlin_header_end(); // after header hook ?>
+<?php gents_header_end(); // after header hook ?>
 
 
-    <?php pixlin_header_end(); // after header hook ?>
+    <?php gents_header_end(); // after header hook ?>
     
-	<?php pixlin_wrapper(); // before wrapper ?>
+	<?php gents_wrapper(); // before wrapper ?>
     
         <div id="wrapper" class="clearfix">
     
-    <?php pixlin_in_wrapper(); // wrapper hook ?>
+    <?php gents_in_wrapper(); // wrapper hook ?>

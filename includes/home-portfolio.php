@@ -38,7 +38,7 @@ if ( $home_portfolio_query->posts ) :
 <div class="container pt">
   <div class="row mt centered">
     
-    <?php $home_portfolio_title = bi_get_data('home_portfolio_title') ? bi_get_data('home_portfolio_title') : __('Recent Work','pixlin'); ?>
+    <?php $home_portfolio_title = bi_get_data('home_portfolio_title') ? bi_get_data('home_portfolio_title') : __('Recent Work','gents'); ?>
     
     <?php
     $count=0;

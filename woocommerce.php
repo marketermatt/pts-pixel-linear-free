@@ -5,7 +5,7 @@
  *
  * @file           page.php
  * @package        Pixel-Linear 
- * @author         Pixel Theme Studio 
+ * @author        Pixel Theme Studio 
  * @copyright      2014 - 2015 Pixel Theme Studio Themes
  * @license        license.txt
  * @version        Release: 1.0.0

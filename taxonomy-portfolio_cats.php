@@ -31,7 +31,7 @@
       </a>
   <?php endif; ?>
   
-  <?php if(pts_get_data('project_title', '1')) {?>
+  <?php if(bi_get_data('project_title', '1')) {?>
   <p><?php the_title(); ?></p>
   <?php } ?>
 </div> <!-- /col -->

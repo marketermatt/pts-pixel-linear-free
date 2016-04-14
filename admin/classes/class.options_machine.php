@@ -65,8 +65,11 @@ class Options_Machine {
 	 */
 	public static function optionsframework_machine($options) {
 		global $smof_output;
-	    $smof_data = of_get_options();
+	    //$smof_data = of_get_options();
+		global $pixel_linear_options;
+		$smof_data = $pixel_linear_options;
 		$data = $smof_data;
+		
 
 		$defaults = array();   
 	    $counter = 0;
@@ -414,6 +417,7 @@ class Options_Machine {
 					$output .= '</ul>';
 					$output .= '<a href="#" class="button slide_add_button">Add New Slide</a></div>';
 					$output .= '<div class="img_error"></div>';
+					
 				break;
 				
 				//drag & drop block manager
@@ -532,7 +536,7 @@ class Options_Machine {
 					
 					$output .= '<div class="backup-box">';
 					$output .= '<div class="instructions">'.$instructions."\n";
-					$output .= '<p><strong>'. __('Last Backup :','').'<span class="backup-log">'.$log.'</span></strong></p></div>'."\n";
+					$output .= '<p><strong>'. __('Last Backup : ','').'<span class="backup-log">'.$log.'</span></strong></p></div>'."\n";
 					$output .= '<a href="#" id="of_backup_button" class="button" title="Backup Options">Backup Options</a>';
 					$output .= '<a href="#" id="of_restore_button" class="button" title="Restore Options">Restore Options</a>';
 					$output .= '</div>';
@@ -543,7 +547,7 @@ class Options_Machine {
 				case 'transfer':
 				
 					$instructions = $value['desc'];
-					$output .= '<textarea id="export_data" rows="8">'.serialize($smof_data) /* 100% safe - ignore theme check nag..  changed from base64_encode(serialize($smof_data)) */ .'</textarea>'."\n";
+					$output .= '<textarea id="export_data" rows="8">'.serialize($smof_data) /* 100% safe - ignore theme check nag . changed from base64_encode(serialize($smof_data)) */ .'</textarea>'."\n";
 					$output .= '<a href="#" id="of_import_button" class="button" title="Restore Options">Import Options</a>';
 				
 				break;
@@ -654,7 +658,8 @@ class Options_Machine {
 					
 					$u_val = '';
 					if($smof_data[$value['id']]){
-						$u_val = stripslashes($smof_data[$value['id']]);
+						//$u_val = stripslashes($smof_data[$value['id']]);
+						$u_val = $smof_data[$value['id']];
 					}
 
 					$output .= Options_Machine::optionsframework_media_uploader_function($value['id'],$u_val, $value['mod']);
@@ -719,6 +724,10 @@ class Options_Machine {
 
 	    $data = of_get_options();
 	    $smof_data = of_get_options();
+		
+		global $pixel_linear_options;
+		$smof_data = $pixel_linear_options;
+		$data = $pixel_linear_options;	
 		
 		$uploader = '';
 	    $upload = $smof_data[$id];
@@ -808,7 +817,7 @@ class Options_Machine {
 		
 		$slider .= '<label>Image URL</label>';
 		$slider .= '<input class="upload slide of-input" name="'. $id .'['.$order.'][url]" id="'. $id .'_'.$order .'_slide_url" value="'. $val['url'] .'" />';
-						
+		
 		$slider .= '<div class="upload_button_div"><span class="button media_upload_button" id="'.$id.'_'.$order .'">Upload</span>';
 		
 		if(!empty($val['url'])) {$hide = '';} else { $hide = 'hide';}

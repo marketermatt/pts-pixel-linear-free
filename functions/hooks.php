@@ -5,8 +5,8 @@
  *
  * @file           hooks.php
  * @package        WordPress 
- * @author         Pixel Theme Studio 
- * @copyright      2015 Pixel Theme Studio Themes
+ * @author        Pixel Theme Studio 
+ * @copyright      2014 Gents Themes
  * @license        license.txt
  * @version        Release: 1.0.0
  * @link           http://codex.wordpress.org/Plugin_API/Hooks
@@ -20,8 +20,8 @@
  *
  * @see header.php
  */
-function pixlin_container() {
-    do_action('pixlin_container');
+function gents_container() {
+    do_action('gents_container');
 }
 
 /**
@@ -29,8 +29,8 @@ function pixlin_container() {
  *
  * @see footer.php
  */
-function pixlin_container_end() {
-    do_action('pixlin_container_end');
+function gents_container_end() {
+    do_action('gents_container_end');
 }
 
 /**
@@ -38,8 +38,8 @@ function pixlin_container_end() {
  *
  * @see header.php
  */
-function pixlin_header() {
-    do_action('pixlin_header');
+function gents_header() {
+    do_action('gents_header');
 }
 
 /**
@@ -47,8 +47,8 @@ function pixlin_header() {
  *
  * @see header.php
  */
-function pixlin_in_header() {
-    do_action('pixlin_in_header');
+function gents_in_header() {
+    do_action('gents_in_header');
 }
 
 /**
@@ -56,8 +56,8 @@ function pixlin_in_header() {
  *
  * @see header.php
  */
-function pixlin_header_end() {
-    do_action('pixlin_header_end');
+function gents_header_end() {
+    do_action('gents_header_end');
 }
 
 /**
@@ -65,8 +65,8 @@ function pixlin_header_end() {
  *
  * @see header.php
  */
-function pixlin_wrapper() {
-    do_action('pixlin_wrapper');
+function gents_wrapper() {
+    do_action('gents_wrapper');
 }
 
 /**
@@ -74,8 +74,8 @@ function pixlin_wrapper() {
  *
  * @see header.php
  */
-function pixlin_in_wrapper() {
-    do_action('pixlin_in_wrapper');
+function gents_in_wrapper() {
+    do_action('gents_in_wrapper');
 }
 
 /**
@@ -83,8 +83,8 @@ function pixlin_in_wrapper() {
  *
  * @see header.php
  */
-function pixlin_wrapper_end() {
-    do_action('pixlin_wrapper_end');
+function gents_wrapper_end() {
+    do_action('gents_wrapper_end');
 }
 
 /**
@@ -92,8 +92,8 @@ function pixlin_wrapper_end() {
  *
  * @see sidebar.php
  */
-function pixlin_widgets() {
-    do_action('pixlin_widgets');
+function gents_widgets() {
+    do_action('gents_widgets');
 }
 
 /**
@@ -101,8 +101,8 @@ function pixlin_widgets() {
  *
  * @see sidebar.php
  */
-function pixlin_widgets_end() {
-    do_action('pixlin_widgets_end');
+function gents_widgets_end() {
+    do_action('gents_widgets_end');
 }
 
 ?>
