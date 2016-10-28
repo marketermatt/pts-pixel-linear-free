@@ -3144,6 +3144,11 @@
                 echo '<input type="hidden" id="last_tab" name="' . $this->args['opt_name'] . '[last_tab]" value="' . $this->options['last_tab'] . '" />';
 
                 // Header area
+                echo '<div class="notice notice-success is-dismissible"><p>Upgrade to the <a href="http://pixelthemestudio.ca/product/pixel-linear/">Premium Version of this theme</a> for more theme options such as: <br />
+                    - Toggle slider on / off for each page <br />
+                    - Styling options <br />
+                    - Customizable footer <br />
+                    - Import / Export options</p></div>';   
                 echo '<div id="redux-header">';
 
                 if ( ! empty( $this->args['display_name'] ) ) {
