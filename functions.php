@@ -81,7 +81,7 @@ function cmb_sample_metaboxes( array $meta_boxes ) {
 	 */
 	$meta_boxes['test_metabox'] = array(
 		'id'         => 'test_metabox',
-		'title'      => __( 'Slider Options', 'cmb' ),
+		'title'      => __( 'Slider Options', 'pixel-linear' ),
 		'pages'      => array( 'page', ), // Post type
 		'context'    => 'normal',
 		'priority'   => 'high',
@@ -89,8 +89,8 @@ function cmb_sample_metaboxes( array $meta_boxes ) {
 		// 'cmb_styles' => true, // Enqueue the CMB stylesheet on the frontend
 		'fields'     => array(
 			array(
-				'name' => __( 'Enable Slider', 'cmb' ),
-				'desc' => __( '<i>Tick Checkbox To Enable Slider On This Page</i>', 'cmb' ),
+				'name' => __( 'Enable Slider', 'pixel-linear' ),
+				'desc' => __( '<i>Tick Checkbox To Enable Slider On This Page</i>', 'pixel-linear' ),
 				'id'   => $prefix . 'enable_disable_slider',
 				'type' => 'checkbox',
 			),

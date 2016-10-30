@@ -19,9 +19,9 @@
             public function ftp_form() {
                 if ( isset( $this->ftp_form ) && ! empty( $this->ftp_form ) ) {
                     echo '<div class="wrap"><div class="error"><p>';
-                    echo __( 'Unable to create a required directory. Please ensure that', 'redux-framework' );
+                    echo __( 'Unable to create a required directory. Please ensure that', 'pixel-linear' );
                     echo ' <code>' . Redux_Helpers::cleanFilePath( trailingslashit( WP_CONTENT_DIR ) ) . '/uploads/</code> ';
-                    echo __( 'has the proper read/write permissions or enter your FTP information below.', 'redux-framework' );
+                    echo __( 'has the proper read/write permissions or enter your FTP information below.', 'pixel-linear' );
                     echo '</p></div><h2></h2>' . $this->ftp_form . '</div>';
                 }
             }

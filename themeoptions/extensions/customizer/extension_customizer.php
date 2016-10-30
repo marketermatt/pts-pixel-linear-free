@@ -267,7 +267,7 @@
                             //'capabilities'   => $this->parent->args['page_permissions'],
                             'transport'      => 'refresh',
                             'theme_supports' => '',
-                            //'sanitize_callback' => array( $this, '_field_validation' ),
+                            'sanitize_callback' => array( $this, '_field_validation' ), 
                             //'sanitize_js_callback' =>array( &$parent, '_field_input' ),
                         );
 
@@ -466,9 +466,9 @@
                 );
 
                 $localize = array(
-                    'save_pending'   => __( 'You have changes that are not saved. Would you like to save them now?', 'redux-framework' ),
-                    'reset_confirm'  => __( 'Are you sure? Resetting will lose all custom values.', 'redux-framework' ),
-                    'preset_confirm' => __( 'Your current options will be replaced with the values of this preset. Would you like to proceed?', 'redux-framework' ),
+                    'save_pending'   => __( 'You have changes that are not saved. Would you like to save them now?', 'pixel-linear' ),
+                    'reset_confirm'  => __( 'Are you sure? Resetting will lose all custom values.', 'pixel-linear' ),
+                    'preset_confirm' => __( 'Your current options will be replaced with the values of this preset. Would you like to proceed?', 'pixel-linear' ),
                     'opt_name'       => $this->args['opt_name'],
                     //'folds'             => $this->folds,
                     'options'        => $this->parent->options,
@@ -501,9 +501,9 @@
                 //wp_enqueue_style('redux-extension-customizer-css', $this->_extension_url . 'assets/css/customizer.css');
 
                 $localize = array(
-                    'save_pending'   => __( 'You have changes that are not saved.  Would you like to save them now?', 'redux-framework' ),
-                    'reset_confirm'  => __( 'Are you sure?  Resetting will lose all custom values.', 'redux-framework' ),
-                    'preset_confirm' => __( 'Your current options will be replaced with the values of this preset.  Would you like to proceed?', 'redux-framework' ),
+                    'save_pending'   => __( 'You have changes that are not saved.  Would you like to save them now?', 'pixel-linear' ),
+                    'reset_confirm'  => __( 'Are you sure?  Resetting will lose all custom values.', 'pixel-linear' ),
+                    'preset_confirm' => __( 'Your current options will be replaced with the values of this preset.  Would you like to proceed?', 'pixel-linear' ),
                     'opt_name'       => $this->args['opt_name'],
                     //'folds'             => $this->folds,
                     'field'          => $this->parent->options,
