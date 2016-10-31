@@ -35,7 +35,6 @@ class NK_Latest_Tweets extends WP_Widget {
                 if(!$token) {
                     // preparing credentials
                     $credentials = $consumerKey . ':' . $consumerSecret;
-                    $toSend = base64_encode($credentials);
 		 
                     // http post arguments
                     $args = array(
