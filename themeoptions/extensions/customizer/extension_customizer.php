@@ -260,7 +260,10 @@
                             continue;
                         }
 
-                        $customSetting = array(
+                        $option['id'] = $this->parent->args['opt_name'] . '[' . $option['id'] . ']';
+
+                        if ( $option['type'] != "heading" || ! empty( $option['type'] ) ) {
+                            $wp_customize->add_setting( $option['id'], array(
                             'default'        => $option['default'],
                             'type'           => 'option',
                             'capabilities'   => 'edit_theme_options',
@@ -269,13 +272,7 @@
                             'theme_supports' => '',
                             'sanitize_callback' => array( $this, '_field_validation' ), 
                             //'sanitize_js_callback' =>array( &$parent, '_field_input' ),
-                        );
-
-
-                        $option['id'] = $this->parent->args['opt_name'] . '[' . $option['id'] . ']';
-
-                        if ( $option['type'] != "heading" || ! empty( $option['type'] ) ) {
-                            $wp_customize->add_setting( $option['id'], $customSetting );
+                        )  ); 
                         }
 
                         if ( ! empty( $option['data'] ) && empty( $option['options'] ) ) {

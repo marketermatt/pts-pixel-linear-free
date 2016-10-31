@@ -1925,11 +1925,10 @@
                     $msg = 'Hints are tooltips that popup when ' . $event . ' the hint icon, offering addition information about the field in which they appear.  They can be ' . strtolower( $s ) . 'd by using the link below.<br/><br/>' . $url;
 
                     // Construct hint tab
-                    $msg = '<p>' .$msg. '</p>';
                     $tab = array(
                         'id'      => 'redux-hint-tab',
                         'title'   => __( 'Hints', 'pixel-linear' ),
-                        'content' => __( $msg, 'pixel-linear' )
+                        'content' => __( '%s', 'pixel-linear' ),$msg
                     );
 
                     $screen->add_help_tab( $tab );

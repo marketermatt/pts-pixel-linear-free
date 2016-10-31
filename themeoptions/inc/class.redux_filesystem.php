@@ -115,7 +115,11 @@
                 } elseif ( $action == 'put_contents' && ! isset( $this->filesystem->killswitch ) ) {
                     $res = $wp_filesystem->put_contents( $file, $content, $chmod );
                     if ( ! $res ) {
-                        $res = file_put_contents( $file, $content );
+                        $res = $wp_filesystem->put_contents(
+                          $file,
+                          $content,
+                          $chmod
+                        );
                         if ( $res ) {
                             chmod( $file, $chmod );
                         }
@@ -123,7 +127,7 @@
                 } elseif ( $action == 'get_contents' ) {
                     $res = $wp_filesystem->get_contents( $file );
                     if ( ! $res ) {
-                        $res = file_get_contents( $file );
+                        $res = $wp_filesystem->get_contents($file);
                     }
                 } elseif ( $action == 'object' ) {
                     $res = $wp_filesystem;

@@ -39,8 +39,8 @@
           'before' => '<nav class="pagination"><ul>' ,
           'after' => '</ul></nav>',
                             'next_or_number' => 'next_and_number', # activate parameter overloading
-                            'nextpagelink' => __('&rarr;',''),
-                            'previouspagelink' => __('&larr;',''),
+                            'nextpagelink' => __('&rarr;','pixel-linear'),
+                            'previouspagelink' => __('&larr;','pixel-linear'),
                             'pagelink' => '%',
                             'echo' => 1 )
                             ); ?>

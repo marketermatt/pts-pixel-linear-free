@@ -449,6 +449,8 @@ class Redux_Welcome {
      * @return string $readme HTML formatted readme file
      */
     public function parse_readme () {
+        global $wp_filesystem;
+        
         $url = ReduxFramework::$_dir;
         $url = str_replace('ReduxCore', '', $url);
         
@@ -457,7 +459,7 @@ class Redux_Welcome {
         if ( !$file ) {
             $readme = '<p>' . __ ( 'No valid changlog was found.', 'pixel-linear' ) . '</p>';
         } else {
-            $readme = file_get_contents ( $file );
+            $readme = $wp_filesystem->get_contents($file);
             $readme = nl2br ( esc_html ( $readme ) );
 
             $readme = explode ( '== Changelog ==', $readme );
