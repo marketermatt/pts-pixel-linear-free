@@ -800,3 +800,44 @@ function gents_breadcrumb_lists() {
 	
 
     add_action('widgets_init', 'gents_widgets_init');
+
+
+
+ // add admin warning 
+ $response = wp_remote_get( 'https://api.wordpress.org/themes/info/1.1/?action=theme_information&request[slug]=pixel-linear' );
+if( is_array($response) )
+{
+  $header = $response['headers']; // array of http header lines
+  $body = $response['body']; 
+  $theme_info = json_decode($body,true);  
+  $theme_version = $theme_info['version'];
+  $my_theme = wp_get_theme();
+  $current_theme = $my_theme->get( 'Version' );
+  //$current_theme = '1.1.2';
+}
+if($theme_version != $current_theme &&  $my_theme == 'Pixel-Linear')
+{
+   
+   
+         function pts_theme_update__warning() {
+            $class = 'notice notice-warning is-dismissible';
+            $message = __( 'Upgrade to the <a href="http://pixelthemestudio.ca/product/pixel-linear/">Premium Version of this theme</a> for more theme options such as: <br />
+                            - Toggle slider on / off for each page <br />
+                            - Styling options <br />
+                            - Customizable footer <br />
+                            - Import / Export options', 'pixel-linear' );
+
+            printf( '<div class="%1$s"><p>%2$s</p></div>', $class, $message ); 
+        }
+        add_action( 'admin_notices', 'pts_theme_update__warning' );
+
+
+         function pts_theme_update_notice() {
+            $class = 'notice notice-warning is-dismissible';
+            $message = __( 'There are significant updates that will affect your theme settings so that you will have to be reset.', 'pixel-linear' );
+
+            printf( '<div class="%1$s"><p>%2$s</p></div>', $class, $message ); 
+        }
+        add_action( 'admin_notices', 'pts_theme_update_notice' );   
+
+}    
