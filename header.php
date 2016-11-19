@@ -23,7 +23,10 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
 <title><?php wp_title('&#124;', true, 'right'); ?></title>
-<?php if( bi_get_data('custom_favicon')['url'] !== '' ) : ?>
+<?php
+    $logo_url = bi_get_data('custom_favicon'); 
+    if( isset($logo_url['url']) && !empty($logo_url['url'])) :
+     ?>
         <link rel="icon" type="image/png" href="<?php echo bi_get_data('custom_favicon')['url']; ?>" />
     <?php endif; ?>
 

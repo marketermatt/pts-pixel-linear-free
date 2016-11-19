@@ -114,7 +114,10 @@
 <div class="container">
 	<div class="row">
     	<div class="col-sm-6">
-        	<?php if( bi_get_data('custom_footer_logo')['url'] !== '' ) { ?>
+        	<?php 
+             $logo_url = bi_get_data('custom_footer_logo');             
+            if( isset($logo_url['url']) && !empty($logo_url['url'])) {
+             ?>
             	<a href="<?php echo home_url(); ?>">
             	<img src="<?php echo bi_get_data('custom_footer_logo')['url']; ?>" alt="<?php bloginfo( 'name' ) ?>" />
                 </a>
